@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Add Driver{% endblock %}
+
+{% block content %}
+<h1 class="mt-5">Add Driver</h1>
+<form method="POST" action="{{ url_for('add_driver') }}">
+    <div class="form-group">
+        <label for="name">Driver Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="nationality">Nationality</label>
+        <input type="text" class="form-control" id="nationality" name="nationality" required>
+    </div>
+    <div class="form-group">
+        <label for="date_of_birth">Date of Birth</label>
+        <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
+    </div>
+    <div class="form-group">
+        <label for="years_active">Years Active</label>
+        <input type="text" class="form-control" id="years_active" name="years_active" required>
+    </div>
+    <div class="form-group">
+        <label for="championships_won">Championships Won</label>
+        <input type="number" class="form-control" id="championships_won" name="championships_won" required>
+    </div>
+    <div class="form-group">
+        <label for="role">Role</label>
+        <input type="text" class="form-control" id="role" name="role" required>
+    </div>
+    <div class="form-group">
+        <label for="measurement_id">Measurement ID</label>
+        <input type="number" class="form-control" id="measurement_id" name="measurement_id" required>
+    </div>
+    <div class="form-group">
+        <label for="stat_id">Stat ID</label>
+        <input type="number" class="form-control" id="stat_id" name="stat_id" required>
+    </div>
+    <div class="form-group">
+        <label for="team_id">Team ID</label>
+        <input type="number" class="form-control" id="team_id" name="team_id" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

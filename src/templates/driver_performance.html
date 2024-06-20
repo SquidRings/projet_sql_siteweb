@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Performance</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 mb-4">Driver Performance</h1>
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <td>{{ driver.name }}</td>
+                </tr>
+                <tr>
+                    <th>Total Wins</th>
+                    <td>{{ driver.total_wins }}</td>
+                </tr>
+                <tr>
+                    <th>Total Podiums</th>
+                    <td>{{ driver.total_podiums }}</td>
+                </tr>
+                <tr>
+                    <th>Total Points</th>
+                    <td>{{ driver.total_points }}</td>
+                </tr>
+                <tr>
+                    <th>Total Fastest Laps</th>
+                    <td>{{ driver.total_fastest_laps }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

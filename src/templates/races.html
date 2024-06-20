@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>F1 Races</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">F1 Races</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/orders">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/drivers">Drivers<a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <h1 class="mt-5">F1 Races</h1>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Race ID</th>
+                    <th>Race Name</th>
+                    <th>Season Year</th>
+                    <th>Round Number</th>
+                    <th>Race Date</th>
+                    <th>Laps</th>
+                    <th>Distance</th>
+                    <th>Winning Driver</th>
+                    <th>Winning Team</th>
+                    <th>Weather Conditions</th>
+                    <th>Attendance</th>
+                    <th>Circuit Name</th>
+                    <th>Location</th>
+                    <th>Country Name</th>
+                    <th>Championship Year</th>
+                    <th>Driver Champion</th>
+                    <th>Team Champion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for race in races %}
+                <tr>
+                    <td>{{ race.race_id }}</td>
+                    <td>{{ race.race_name }}</td>
+                    <td>{{ race.season_year }}</td>
+                    <td>{{ race.round_number }}</td>
+                    <td>{{ race.race_date }}</td>
+                    <td>{{ race.laps }}</td>
+                    <td>{{ race.distance }}</td>
+                    <td>{{ race.winning_driver }}</td>
+                    <td>{{ race.winning_team }}</td>
+                    <td>{{ race.weather_conditions }}</td>
+                    <td>{{ race.attendance }}</td>
+                    <td>{{ race.circuit_name }}</td>
+                    <td>{{ race.location }}</td>
+                    <td>{{ race.country_name }}</td>
+                    <td>{{ race.championship_year }}</td>
+                    <td>{{ race.driver_champion }}</td>
+                    <td>{{ race.team_champion }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

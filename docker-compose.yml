@@ -1,0 +1,17 @@
+version: '3'
+services:
+  flask:
+    build:
+      context: .
+    container_name: flask_app
+    expose:
+      - "5000"
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - flask

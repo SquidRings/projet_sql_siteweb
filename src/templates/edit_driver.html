@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Driver{% endblock %}
+
+{% block content %}
+<h1 class="mt-5">Edit Driver</h1>
+<form method="POST" action="{{ url_for('edit_driver', driver_id=driver.driver_id) }}">
+    <div class="form-group">
+        <label for="name">Driver Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="{{ driver.name }}" required>
+    </div>
+    <div class="form-group">
+        <label for="nationality">Driver Nationality</label>
+        <input type="text" class="form-control" id="nationality" name="nationality" value="{{ driver.nationality }}" required>
+    </div>
+    <div class="form-group">
+        <label for="date_of_birth">Driver Date of Birth</label>
+        <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" value="{{ driver.date_of_birth }}" required>
+    </div>
+    <div class="form-group">
+        <label for="years_active">Driver Years Active</label>
+        <input type="text" class="form-control" id="years_active" name="years_active" value="{{ driver.years_active }}" required>
+    </div>
+    <div class="form-group">
+        <label for="championships_won">Driver Championships Won</label>
+        <input type="number" class="form-control" id="championships_won" name="championships_won" value="{{ driver.championships_won }}" required>
+    </div>
+    <div class="form-group">
+        <label for="role">Driver Role</label>
+        <input type="text" class="form-control" id="role" name="role" value="{{ driver.role }}" required>
+    </div>
+    <div class="form-group">
+        <label for="measurement_id">Driver Measurement ID</label>
+        <input type="number" class="form-control" id="measurement_id" name="measurement_id" value="{{ driver.measurement_id }}" required>
+    </div>
+    <div class="form-group">
+        <label for="stat_id">Driver Stat ID</label>
+        <input type="number" class="form-control" id="stat_id" name="stat_id" value="{{ driver.stat_id }}" required>
+    </div>
+    <div class="form-group">
+        <label for="team_id">Driver Team ID</label>
+        <input type="number" class="form-control" id="team_id" name="team_id" value="{{ driver.team_id }}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+{% endblock %}

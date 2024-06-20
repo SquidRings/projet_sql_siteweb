@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Driver{% endblock %}
+
+{% block content %}
+<h1 class="mt-5">Delete Driver</h1>
+<p>Are you sure you want to delete the driver with ID {{ driver.driver_id }}?</p>
+<form method="POST" action="{{ url_for('delete_driver', driver_id=driver.driver_id) }}"></form>
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

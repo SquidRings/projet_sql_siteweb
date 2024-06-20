@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Order{% endblock %}
+
+{% block content %}
+<h1 class="mt-5">Delete Order</h1>
+<p>Are you sure you want to delete the order with ID {{ order.order_id }}?</p>
+<form method="POST" action="{{ url_for('delete_order', order_id=order.order_id) }}">
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

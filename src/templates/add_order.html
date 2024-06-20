@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Add Order{% endblock %}
+
+{% block content %}
+<h1 class="mt-5">Add New Order</h1>
+{% if error %}
+    <p class="text-danger">{{ error }}</p>
+{% endif %}
+<form method="post" action="{{ url_for('add_order') }}">
+    <div class="form-group">
+        <label for="order_date">Order Date:</label>
+        <input type="date" class="form-control" id="order_date" name="order_date" required>
+    </div>
+    <div class="form-group">
+        <label for="vendor_id">Vendor:</label>
+        <select class="form-control" id="vendor_id" name="vendor_id" required>
+            {% for vendor in vendors %}
+                <option value="{{ vendor.vendor_id }}">{{ vendor.vendor_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="total_cost">Total Cost:</label>
+        <input type="number" step="0.01" class="form-control" id="total_cost" name="total_cost" required>
+    </div>
+    <div class="form-group">
+        <label for="total_cost_excl_vat">Total Cost Excl. VAT:</label>
+        <input type="number" step="0.01" class="form-control" id="total_cost_excl_vat" name="total_cost_excl_vat" required>
+    </div>
+    <div class="form-group">
+        <label for="order_status_id">Order Status:</label>
+        <select class="form-control" id="order_status_id" name="order_status_id" required>
+            {% for status in order_statuses %}
+                <option value="{{ status.order_status_id }}">{{ status.order_status }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Order</button>
+</form>
+{% endblock %}

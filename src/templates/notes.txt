@@ -1,0 +1,4 @@
+index.html:
+landing page de la page avec otutes le stats et les info en mini avec un bouton
+more qui redirect vers la page d'où elles sont était pris
+

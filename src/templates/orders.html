@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>F1 Orders</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">F1 Orders</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/drivers">Drivers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/races">Races</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    <div class="container">
+        <h1 class="mt-5">F1 Orders</h1>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Order Date</th>
+                    <th>Vendor Name</th>
+                    <th>Total Cost</th>
+                    <th>Total Cost Excl. VAT</th>
+                    <th>Order Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td>{{ order.order_id }}</td>
+                    <td>{{ order.order_date }}</td>
+                    <td>{{ order.vendor_name }}</td>
+                    <td>{{ order.total_cost }}</td>
+                    <td>{{ order.total_cost_excl_vat }}</td>
+                    <td>{{ order.order_status }}</td>
+                    <td>
+                        <a href="{{ url_for('edit_order', order_id=order.order_id) }}" class="btn btn-primary btn-sm">Edit</a>
+                        <form action="{{ url_for('delete_order', order_id=order.order_id) }}" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('add_order') }}" class="btn btn-success mt-3">Add Order</a>
+    </div>
+</body>
+</html>
